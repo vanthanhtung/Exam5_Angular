@@ -1,0 +1,16 @@
+<td><button type="button" class="btn btn-primary" routerLink="/">Back to List</button></td>
+<form *ngIf="curentBook">
+  <div class="container">
+    <h1>Detail</h1>
+
+    <label for="email"><b>Name </b></label>
+    <input type="text"  disabled name="title" id="title" required [(ngModel)]="curentBook.title">
+<hr>
+    <label for="psw"><b>Author </b></label>
+    <input type="text" disabled name="author" id="author" required [(ngModel)]="curentBook.author">
+<hr>
+    <label for="psw-repeat"><b>Description </b></label>
+    <input type="text" disabled name="description" id="description" required [(ngModel)]="curentBook.description">
+    <hr>
+  </div>
+</form>

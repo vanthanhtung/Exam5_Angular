@@ -1,0 +1,27 @@
+<h1 style="margin-left: 500px;">Tung's library</h1><hr>
+<h2>Total: {{listBook.length}}</h2>
+<td><button type="button" class="btn btn-primary" (click)="create()">Create new Book</button></td>
+<br><br>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of listBook let i = index">
+      <td>{{i+1}}</td>
+      <td>
+        <a [routerLink]="['/detail',book.id]">{{book.title}}</a>
+      </td>
+      <td>{{book.author}}</td>
+      <td><button type="button" class="btn btn-primary" [routerLink]="['/update',book.id]">Edit</button></td>
+      <td><button type="button" class="btn btn-danger" [routerLink]="['/delete',book.id]">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
